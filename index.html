@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Martin Britos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="profile">
+      <img src="img/me.jpg" alt="Martin Britos" class="profile-img">
+      <h1>Martin Britos</h1>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="#">Proyectos</a></li>
+        <li><a href="#">Estudios</a></li>
+        <li><a href="#">Habilidades</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="content">
+    <p class="bio">
+      Soy un apasionado por la tecnología con formación en mecatrónica y actualmente estudiante de Ingeniería Informática.
+      Cuento con experiencia en programación (Java, Python, C++) y electrónica, aplicando mis conocimientos en proyectos 
+      que integran software y hardware, como sistemas de automatización con Arduino y APIs para monitoreo de dispositivos. 
+      Me especializo en el desarrollo de soluciones innovadoras que combinan programación, electrónica y conectividad. 
+      Siempre busco aprender y crear tecnología que genere impacto.
+    </p>
+  </section>
+
+  <!-- Información adicional -->
+  <section class="info-box">
+    <div id="infoContent">
+      <div class="info-item">
+        <img src="img/mkt.png" alt="Mecatronica">
+        <p>Tecnico Industrial en Mecatronica</p>
+      </div>
+      <div class="info-item">
+        <img src="img/mkt.png " alt="Mecatronica">
+        <p>Tecnico industrial en Mecatronica</p>
+      </div>
+      <div class="info-item visible">
+        <img src="img/arduino.png" alt="Arduino">
+        <p>Experto en Arduino</p>
+      </div>
+      <div class="info-item">
+        <img src="img/java.png" alt="Java">
+        <p>Conocimientos en Java</p>
+      </div>
+      <div class="info-item">
+        <img src="img/python.png" alt="Python">
+        <p>Conocimientos en Python</p>
+      </div>
+    </div>
+  </section>
+
+  <footer> 
+    <ul>
+      <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+      <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+      <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+      <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+    </ul>
+  </footer>
+
+  <script>
+    let infoContent = document.getElementById('infoContent');
+    let infoItems = infoContent.getElementsByClassName('info-item');
+    let currentIndex = 0;
+
+    function changeContent() {
+        // Eliminar la clase 'visible' de todos los elementos
+        for (let i = 0; i < infoItems.length; i++) {
+            infoItems[i].classList.remove('visible');
+        }
+
+        // Mostrar el siguiente elemento
+        infoItems[currentIndex].classList.add('visible');
+
+        // Actualizar el índice
+        currentIndex = (currentIndex + 1) % infoItems.length;
+    }
+
+    // Inicializar mostrando el primer contenido
+    changeContent();
+
+    // Cambiar el contenido cada 5 segundos
+    setInterval(changeContent, 5000);
+  </script>
+
+</body>
+</html>

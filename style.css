@@ -1,0 +1,183 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('img/fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Century Gothic', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Header con nombre, foto y menu */
+header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    border: 3px solid white;
+    animation: borderGlow 2s infinite alternate;
+}
+
+@keyframes borderGlow {
+    0% { border-color: white; }
+    100% { border-color: #b9b9b9; }
+}
+
+.profile h1 {
+    margin-left: 15px;
+    font-size: 24px;
+}
+
+/* Menú de opciones en la parte superior derecha */
+nav {
+    display: flex;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    background: rgba(39, 1, 49, 0.7);
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #b9b9b9;
+}
+
+/* Contenedor central */
+.content {
+    width: 50%; 
+    background: rgba(39, 1, 49, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    position: absolute;
+    top: 150px;
+    left: 20px; 
+}
+
+.bio {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Caja de Información Adicional */
+.info-box {
+    position: fixed;
+    top: 100px;
+    right: 75px;
+    width: 350px;
+    height: 250px;
+    background: rgba(39, 1, 49, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#infoContent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Asegura que el logo esté arriba y el texto abajo */
+}
+
+.info-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Apila el logo y el texto */
+    justify-content: center;
+    align-items: center;
+}
+
+.info-item.visible {
+    opacity: 1;
+}
+
+.info-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px; /* Separa el logo del texto */
+}
+
+.info-item p {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: #b9b9b9;
+}
